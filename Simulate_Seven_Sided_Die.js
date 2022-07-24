@@ -23,38 +23,14 @@ const Random_Number_Between_1_and_7 = () =>
 const Random_Number_Between_1_and_7 = () =>
 {
 	let Roll_1 = Random_Number_Between_1_and_5 ();
-	let Roll_2 = Random_Number_Between_1_and_5 () % 3;
-	let Sum = Roll_1 + Roll_2;
-	if (Sum === 1 || Sum === 7)
-	{
-		return Sum;
-	}
-	if (Sum === 2 || Sum === 6)
-	{
-		Roll_1 = Random_Number_Between_1_and_5 ();
-		Roll_2 = Random_Number_Between_1_and_5 () % 3;
-		Sum = Roll_1 + Roll_2;
-		if (Sum === 2 || Sum === 6)
-		{
-			return Sum;
-		}
-	}
-	if (Sum === 3 || Sum === 4 || Sum === 5)
-	{
-		Roll_1 = Random_Number_Between_1_and_5 ();
-		Roll_2 = Random_Number_Between_1_and_5 () % 3;
-		Sum = Roll_1 + Roll_2;
-		if (Sum === 3 || Sum === 4 || Sum === 5)
-		{
-			Roll_1 = Random_Number_Between_1_and_5 ();
-			Roll_2 = Random_Number_Between_1_and_5 () % 3;
-			Sum = Roll_1 + Roll_2;
-			if (Sum === 3 || Sum === 4 || Sum === 5)
-			{
-				return Sum;
-			}
-		}
-	}
+	let Roll_2 = Random_Number_Between_1_and_5 ();
+    let Sum = Roll_1 + Roll_2;
+    while (Sum > 7)
+    {
+        Roll_1 = Random_Number_Between_1_and_5 ();
+	    Roll_2 = Random_Number_Between_1_and_5 ();
+        Sum = Roll_1 + Roll_2;
+    }
 	return Sum;
 }
 
